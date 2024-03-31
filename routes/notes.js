@@ -17,7 +17,7 @@ notes.get('/:note_id', (req, res) => {
     });
 });
 
-notes.delete('/:node_id', (req, res) => {
+notes.delete('/:note_id', (req, res) => {
     const noteId = req.params.note_id;
     readFromFile('./db/db.json').then((data) => JSON.parse(data)).then((json) => {
         const result = json.filter((note) => note.id !== noteId);
